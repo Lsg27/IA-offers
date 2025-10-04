@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso de Éxito: Academia Online Aprende+ | SynapseAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #f97316;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .case-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .case-header h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .case-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .case-image {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .case-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .case-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .case-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .case-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .case-section ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .case-section ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .case-section ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .case-section ul li i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+        
+        .results {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 30px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 50px;
+        }
+        
+        .results h2 {
+            color: var(--success);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .result-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .result-item .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 10px;
+        }
+        
+        .result-item .label {
+            color: var(--gray);
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+        }
+        
+        .testimonial blockquote {
+            font-style: italic;
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .testimonial blockquote::before {
+            content: '"';
+            font-size: 3rem;
+            color: rgba(37, 99, 235, 0.1);
+            position: absolute;
+            left: -10px;
+            top: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            overflow: hidden;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--gray);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #ea580c;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .case-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-brain"></i>
+                SynapseAI
+            </a>
+            <a href="index.html#portafolio" class="back-link">
+                <i class="fas fa-arrow-left"></i> Volver al Portafolio
+            </a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="case-header">
+            <h1>Caso de Éxito: Academia Online Aprende+</h1>
+            <p>Cómo una academia educativa transformó su proceso de matrícula con automatización</p>
+        </div>
+        
+        <div class="case-image">
+            <img src="https://via.placeholder.com/800x400?text=Academia+Online+con+Tecnología" alt="Academia Online Aprende+">
+        </div>
+        
+        <div class="case-content">
+            <div class="case-section">
+                <h2><i class="fas fa-exclamation-triangle"></i> El Problema</h2>
+                <ul>
+                    <li><i class="fas fa-clock"></i> Proceso de matrícula manual y lento</li>
+                    <li><i class="fas fa-user-friends"></i> Altos volúmenes de consultas administrativas</li>
+                    <li><i class="fas fa-file-invoice"></i> Errores en la captura de datos de estudiantes</li>
+                    <li><i class="fas fa-calendar-alt"></i> Dificultad para gestionar horarios y asignaciones</li>
+                    <li><i class="fas fa-user-times"></i> Pérdida de potenciales estudiantes por proceso engorroso</li>
+                </ul>
+            </div>
+            
+            <div class="case-section">
+                <h2><i class="fas fa-lightbulb"></i> La Solución</h2>
+                <ul>
+                    <li><i class="fas fa-robot"></i> Chatbot para consultas frecuentes</li>
+                    <li><i class="fas fa-file-alt"></i> Formularios de matrícula automatizados</li>
+                    <li><i class="fas fa-sync"></i> Integración con sistema de gestión académica</li>
+                    <li><i class="fas fa-bell"></i> Recordatorios automáticos para estudiantes</li>
+                    <li><i class="fas fa-chart-bar"></i> Dashboard de seguimiento en tiempo real</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="results">
+            <h2><i class="fas fa-trophy"></i> Resultados Obténidos</h2>
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="number">90%</div>
+                    <div class="label">Menos tiempo administrativo</div>
+                </div>
+                <div class="result-item">
+                    <div class="number">40%</div>
+                    <div class="label">Más matrículas</div>
+                </div>
+                <div class="result-item">
+                    <div class="number">75%</div>
+                    <div class="label">Reducción en errores</div>
+                </div>
+                <div class="result-item">
+                    <div class="number">60%</div>
+                    <div class="label">Mejora en satisfacción estudiantil</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="testimonial">
+            <blockquote>"El proceso de matrícula que antes nos llevaba días ahora se completa en minutos. La automatización ha transformado nuestra academia y permitido al equipo enfocarse en la calidad educativa."</blockquote>
+            <div class="testimonial-author">
+                <div class="author-img">
+                    <img src="https://via.placeholder.com/60x60?text=RP" alt="Ricardo Pérez">
+                </div>
+                <div class="author-info">
+                    <h4>Ricardo Pérez</h4>
+                    <p>Director, Aprende+ Academy</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>¿Listo para transformar tu academia?</h2>
+            <p>Agenda un diagnóstico gratuito y descubre cómo la automatización puede revolucionar tu institución educativa.</p>
+            <a href="index.html#diagnostico" class="cta-button">Agendar Diagnóstico Gratis</a>
+        </div>
+    </div>
+</body>
+</html>
